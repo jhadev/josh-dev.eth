@@ -19,4 +19,4 @@ jobs:
       - run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: echo "pull request info ${{ github.event.pull_request }}"
+      - run: echo "pull request info ${{ github.event.pull_request.body }}"
