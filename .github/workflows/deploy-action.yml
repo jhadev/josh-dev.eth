@@ -1,9 +1,8 @@
-name: Release Info
+name: Info
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [closed]
 
 jobs:
   Provide-Feedback:
@@ -16,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - run: echo "Info - ${{ github.event }}"
       - run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: echo "pull request info ${{ github.event.pull_request.body }}"
